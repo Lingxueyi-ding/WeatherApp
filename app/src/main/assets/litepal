@@ -32,9 +32,9 @@
     	</list>
     -->
     <list>
-        <mapping class="com.example.gitapplication.Province"></mapping>
-        <mapping class="com.example.gitapplication.City"></mapping>
-        <mapping class="com.example.gitapplication.County"></mapping>
+        <mapping class="com.example.gitapplication.db.Province"></mapping>
+        <mapping class="com.example.gitapplication.db.City"></mapping>
+        <mapping class="com.example.gitapplication.db.County"></mapping>
 
     </list>
 

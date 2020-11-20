@@ -1,4 +1,4 @@
-package com.example.gitapplication;
+package com.example.gitapplication.db;
 
 import org.litepal.crud.LitePalSupport;
 
