@@ -11,6 +11,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Utility {
+    /**
+     * 解析服务器返回的省级数据
+     */
     public static boolean handleProvinceResponse(String response) {
         if(!TextUtils.isEmpty(response)){
             try {
@@ -29,6 +32,9 @@ public class Utility {
         }
         return false;
     }
+    /**
+     * 解析服务器返回的市级数据
+     */
     public static boolean handleCityResponse(String response,int provinceId) {
         if(!TextUtils.isEmpty(response)){
             try {
@@ -48,6 +54,9 @@ public class Utility {
         }
         return false;
     }
+    /**
+     * 解析服务器返回的县级数据
+     */
     public static boolean handleCountyResponse(String response,int cityId) {
         if(!TextUtils.isEmpty(response)){
             try {
