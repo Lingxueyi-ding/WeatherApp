@@ -4,7 +4,6 @@ package com.example.gitapplication;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.text.AlteredCharSequence;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,9 +60,9 @@ public class ChooseAreaFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view=inflater.inflate(R.layout.choose_area,container,false);
-       titleText=(TextView) view.findViewById(R.id.title_text);
-       backButton=(Button) view.findViewById(R.id.back_btn);
-       listView=(ListView) view.findViewById(R.id.list_view);
+       titleText= view.findViewById(R.id.title_text);
+       backButton= view.findViewById(R.id.back_btn);
+       listView= view.findViewById(R.id.list_view);
        adapter=new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1,dataList);
        listView.setAdapter(adapter);
         return view;
@@ -77,14 +76,29 @@ public class ChooseAreaFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(currentLevel == LEVEL_PROVINCE){
                     selectedProvince=provinceList.get(position);
+                    queryCities();
+                }else if(currentLevel == LEVEL_CITY){
+                    selectedCity=cityList.get(position);
+                    queryCountries();
                 }
             }
         });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentLevel == LEVEL_COUNTY) {
+                    queryCities();
+                } else if (currentLevel == LEVEL_CITY) {
+                    queryProvinces();
+                }
+            }
+        });
+        queryProvinces();
     }
     /**
      * 查询所有省，查数据库，再查服务器
      */
-    private void queryProvinences(){
+    private void queryProvinces(){
         titleText.setText("中国");
         backButton.setVisibility(View.GONE);
         provinceList= LitePal.findAll(Province.class);
@@ -179,7 +193,7 @@ public class ChooseAreaFragment extends Fragment {
                         public void run() {
                             closeProgressDialog();
                             if("province".equals(type)){
-                                queryProvinences();
+                                queryProvinces();
                             }else if("city".equals(type)){
                                 queryCities();
                             }else if("county".equals(type)){
