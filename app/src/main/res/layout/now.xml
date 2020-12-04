@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:textColor="#121111"
+        android:textColor="#FBF8F8"
         android:textSize="60sp" />
 
     <!--显示天气概况-->
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:textColor="#121111"
+        android:textColor="#FBF8F8"
         android:textSize="20sp" />
 
 </LinearLayout>

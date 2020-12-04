@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="2"
-        android:textColor="#121111" />
+        android:textColor="#FBF8F8" />
 
     <!--显示天气概况-->
     <TextView
@@ -21,7 +21,7 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:gravity="center"
-        android:textColor="#121111" />
+        android:textColor="#FBF8F8" />
 
     <!--显示当天最高气温-->
     <TextView
@@ -31,7 +31,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="right"
-        android:textColor="#121111" />
+        android:textColor="#FBF8F8" />
 
     <!--显示当天最低气温-->
     <TextView
@@ -41,7 +41,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="right"
-        android:textColor="#121111" />
+        android:textColor="#FBF8F8" />
 
 
 </LinearLayout>
