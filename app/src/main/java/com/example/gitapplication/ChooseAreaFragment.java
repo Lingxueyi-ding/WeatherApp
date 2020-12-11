@@ -53,7 +53,9 @@ public class ChooseAreaFragment extends Fragment {
     private List<String> dataList = new ArrayList<>();
 
     //    省列表、市列表、县列表
-    private List<Province> provinceList;     private List<City> cityList;       private List<County> countyList;
+    private List<Province> provinceList;
+    private List<City> cityList;
+    private List<County> countyList;
 
     //    选中的省份、城市和当前选中的级别
     private Province selectedProvince;
@@ -133,7 +135,7 @@ public class ChooseAreaFragment extends Fragment {
             listView.setSelection(0);
             currentLevel = LEVEL_PROVINCE;
         }else{
-            String address = "http://guolin.tech/api/china";
+            String address = "http://localhost:8080/WeatherAPI/China";
             queryFromServer(address,"province");
         }
 
@@ -156,7 +158,7 @@ public class ChooseAreaFragment extends Fragment {
             currentLevel = LEVEL_CITY;
         }else{
             int provinceCode = selectedProvince.getProvinceCode();
-            String address = "http://guolin.tech/api/china/" + provinceCode;
+            String address = "http://localhost:8080/WeatherAPI/China" + provinceCode;
             queryFromServer(address,"city");
         }
 
@@ -179,7 +181,7 @@ public class ChooseAreaFragment extends Fragment {
         }else{
             int provinceCode = selectedProvince.getProvinceCode();
             int cityCode = selectedCity.getCityCode();
-            String address = "http://guolin.tech/api/china/"
+            String address = "http://localhost:8080/WeatherAPI/China"
                     + provinceCode + "/" + cityCode;
             queryFromServer(address,"county");
         }
